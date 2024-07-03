@@ -1,0 +1,11 @@
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID. PROGCOBOL01.
+      **************************
+      *AREA DE COMENTARIOS - REMARKS
+      *AUTHOR = MARCIO
+      *OBJETIVO: MOSTRAR A STRING HELLO COBOL
+      *DATA = 08/06/2024
+      **************************
+       ENVIRONMENT DIVISION.
+       DATA DIVISION.
+       PROCEDURE DIVISION.
