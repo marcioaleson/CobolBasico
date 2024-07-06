@@ -3,9 +3,14 @@
       **************************
       *AREA DE COMENTARIOS - REMARKS
       *AUTHOR = MARCIO
-      *OBJETIVO: MOSTRAR A STRING HELLO COBOL
-      *DATA = 08/06/2024
+      *OBJETIVO: MOSTRAR NOME EM  COBOL
+      *DATA = 06/07/2024
       **************************
        ENVIRONMENT DIVISION.
        DATA DIVISION.
+       WORKING-STORAGE SECTION.
+       77 WRK-NOME PIC X(20) VALUE SPACES.
        PROCEDURE DIVISION.
+           ACCEPT WRK-NOME FROM CONSOLE.
+           DISPLAY 'NOME.. ' WRK-NOME(1:10).
+           STOP RUN.
