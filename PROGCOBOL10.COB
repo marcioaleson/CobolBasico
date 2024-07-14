@@ -1,0 +1,42 @@
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID. PROGCOBOL09.
+      ******************************
+      *AREA DE COMENTARIOS - REMARKS
+      *AUTHOR = MARCIO
+      *OBJETIVO: EVALUATE EXEMPLO
+      * DATA = 14/07/24
+      *******************************
+       ENVIRONMENT DIVISION.
+       CONFIGURATION SECTION.
+       SPECIAL-NAMES.
+           DECIMAL-POINT IS COMMA.
+       DATA DIVISION.
+       WORKING-STORAGE SECTION.
+       77 WRK-PRODUTO PIC X(20) VALUE SPACES.
+       77 WRK-UF PIC X(02) VALUE SPACES.
+       77 WRK-VALOR PIC 9(06)V99 VALUE ZEROS.
+       77 WRK-FRETE PIC 9(04)V99 VALUE ZEROS.
+       PROCEDURE DIVISION.
+         DISPLAY 'PRODUTO..'
+         ACCEPT WRK-PRODUTO.
+
+         DISPLAY 'VALOR..'
+         ACCEPT WRK-VALOR.
+
+         DISPLAY 'ESTADO A ENTREGAR..'
+         ACCEPT WRK-UF.
+
+         EVALUATE WRK-UF
+            WHEN 'SP'
+              COMPUTE WRK-FRETE = WRK-VALOR * 1,05
+            WHEN 'RJ'
+              COMPUTE WRK-FRETE = WRK-VALOR * 1,10
+            WHEN 'MG'
+              COMPUTE WRK-FRETE = WRK-VALOR * 1,15
+            WHEN OTHER
+              DISPLAY 'NAO PODEMOS ENTRAGAR'
+          END-EVALUATE.
+
+          DISPLAY '================'
+          DISPLAY 'TOTAL DO FRETE: ' WRK-FRETE
+       STOP RUN.
